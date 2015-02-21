@@ -49,11 +49,11 @@ elsif deg < 70
 elsif deg < 110
 	deg = "東"
 elsif deg < 160
-	deg "南東"
+	deg = "南東"
 elsif deg < 200
 	deg = "南"
 elsif deg < 250
-	deg < "南西"
+	deg = "南西"
 elsif deg < 290
 	deg = "西"
 elsif deg < 340
