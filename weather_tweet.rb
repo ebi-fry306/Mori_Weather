@@ -14,7 +14,7 @@ client = Twitter::REST::Client.new do |config|
 end
 
 #緯度と経度で取得しないと数値が正しくなかったので
-api = "http://api.openweathermap.org/data/2.5/weather?lat=34.83&lon=137.93"
+api = "http://api.openweathermap.org/data/2.5/weather?units=metric&lat=34.83&lon=137.93"
 source = open(api).read()
 json = JSON.parser.new(source)
 hash = json.parse()
@@ -64,9 +64,9 @@ end
 
 #温度とか気圧とか湿度とか
 main = hash['main']
-temp = main['temp'].to_f - 273.15
-temp_min = main['temp_min'].to_f - 273.15
-temp_max = main['temp_max'].to_f - 273.15
+temp = main['temp'].to_f
+temp_min = main['temp_min'].to_f
+temp_max = main['temp_max'].to_f
 pressure = main['pressure'].to_i
 humidity = main['humidity'].to_i
 
